@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ShopItemFunc from './components/shop-item-func/shop-item'
+import ShopItemClass from './components/shop-item-class/shop-item'
+import type { ShopItemProps } from './components/shop-item-func/shop-item.type'
+import Calendar from './components/calendar/calendar'
+
+const shopItem: ShopItemProps = {
+  brand: 'Tiger of Sweden',
+  title: 'Leonard coat',
+  description: 'Minimalistic coat in cotton-blend',
+  descriptionFull:
+    "Men's minimalistic overcoat in cotton-blend. Features a stand-up collar, concealed front closure and single back vent. Slim fit with clean, straight shape. Above-knee length.",
+  price: 399,
+  currency: '£',
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <div className="container-shop-item">
+        <div className="background-element"></div>
+        <div className="highlight-window">
+          <div className="highlight-overlay"></div>
+        </div>
+        <div className="window">
+          <ShopItemFunc {...shopItem} />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="container-shop-item">
+        <div className="background-element"></div>
+        <div className="highlight-window">
+          <div className="highlight-overlay"></div>
+        </div>
+        <div className="window">
+          <ShopItemClass {...shopItem} />
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <div className="container-calendar">
+        <Calendar date={new Date()} />
+      </div>
+    </div>
   )
 }
 
