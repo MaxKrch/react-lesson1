@@ -32,12 +32,13 @@ describe('createCalendarDates', () => {
 
     expect(daysInTargetMonth[0].date()).toBe(1)
     expect(daysInTargetMonth.length).toBe(30)
-    expect(daysInTargetMonth.at(-1)?.date()).toBe(30)
+    expect(daysInTargetMonth[daysInTargetMonth.length - 1]?.date()).toBe(30)
   })
 
   it('should not contain extra days from next month when month ends on Sunday', () => {
     const result = createCalendarDates(new Date('2023-12-01'))
-    const lastDay = result.flat().at(-1)!
+    const allDays = result.flat()
+    const lastDay = allDays[allDays.length - 1]!
 
     expect(lastDay.month()).toBe(11) //
     expect(lastDay.date()).toBe(31)

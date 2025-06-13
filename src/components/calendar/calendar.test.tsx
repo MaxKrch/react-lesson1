@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react'
 import Calendar from './calendar'
-import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 import { vi } from 'vitest'
 import type { CalendarWeekProps } from './calendar.type'
