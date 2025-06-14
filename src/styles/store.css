@@ -359,16 +359,16 @@ button:hover {
             flex-flow:column;
   }
   .highlight-window {
-    position:fixed;
-    left:0;
-    height:100%;
-    width:50%;
+    /* position:fixed; */
+    /* left:0; */
+    /* height:100%; */
+    /* width:50%; */
   }
   .window {
     overflow:auto;
     width:50%;
     height:auto;
-    position:absolute;
+    /* position:absolute; */
     box-shadow:none;
     right: 0;
   }
